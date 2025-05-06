@@ -92,7 +92,16 @@ public class TraversalPractice {
    * @return The number of levels in the tree
    */
   public static <T> int numLevels(Node<T> node) {
-    return 0;
+    if (node == null) {
+      return 0;
+    }
+    if (node.left == null && node.right == null) {
+      return 1;
+    }
+    int left = numLevels(node.left);
+    int right = numLevels(node.right);
+
+    return 1 + Math.max(left, right);
   }
 
   public static void main(String[] args) {
@@ -107,6 +116,8 @@ public class TraversalPractice {
      // Replace the below line to create a tree 
      // as represented in the diagram above
      Node<Integer> smallTree = null;
+     
+     
 
 
     /*
