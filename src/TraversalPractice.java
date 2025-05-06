@@ -54,8 +54,10 @@ public class TraversalPractice {
       return 0;
     }
 
-    
-    return 0;
+    int leftNodes = treeSum(node.left);
+    int rightNodes = treeSum(node.right);
+
+    return node.value + leftNodes + rightNodes;
   }
 
   /**
